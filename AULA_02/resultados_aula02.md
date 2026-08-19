@@ -24,4 +24,43 @@
 
 # Todos os resultados devem ser inseridos no arquivo resultados_aula02.md
 
-#========== FIM ==============
+
+#========== PRODUÇÃO DO RELATÓRIO:==============
+# Para a entrega completa deste LAB02 você precisa copiar a saída do código (output) e adicionar as repostas das perguntas abaixo:
+
+    --- RESULTADOS DO LAB 02 ---
+  Mensagem de Teste: 'Gostaria de devolver o produto que comprei'
+  Intenção Predita: troca_devolucao
+  
+  --- Distribuição de Probabilidades por Classe ---
+  Classe [duvida_frete]: 27.99%
+  Classe [rastrear_pedido]: 24.54%
+  Classe [troca_devolucao]: 47.46%
+
+# 1 - Avaliem os resultados e verifiquem se os resultados foram corretos ou incorretos. Coloque a resposta no arquivo do relatório do laboratório
+
+  Os resultados foram corretos, segundo a divisão de probabilidade a intenção predita "troca_devolução" esta de acordo com a mensagem.
+
+# 2 - Detectado algum erro, qual seria a maneira mais correta de melhorar o resultado do algoritmo?
+  
+  Não há erros no código.
+
+# 3 - Detalhe a função do Naive Bayes no algorítmo.
+
+  A função Naiva Bayes é calcular a probabilidade da intenção predita na frase inserida pelo usuário
+  e escolhendo a classe correta a partir da porcentagem de sua probabilidade.
+
+  
+# Todos os resultados devem ser inseridos no arquivo resultados_aula02.md
+
+
+
+
+
+
+
+
+
+
+
+
