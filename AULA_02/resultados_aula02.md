@@ -132,6 +132,17 @@
 # Todos os resultados devem ser inseridos no arquivo resultados_aula02.md
 
 
+# Resultados - Chatbot Agência de Viagens
+
+### 1. Resultados das Frases Inéditas
+O modelo alcançou **100% de acurácia** no teste e classificou as novas frases perfeitamente:
+* *"Quero emitir um voo para o Japão..."* ==> `[comprar_passagem]`
+* *"Não vou mais viajar e quero meu dinheiro..."* ==> `[cancelar_reserva]`
+* *"Pode me passar para o atendimento humano?"* ==> `[falar_atendente]`
+
+### 2. Justificativa Técnica
+* **TF-IDF (Vetorizador):** Ele funcionou identificando quais palavras eram mais importantes. O robô aprendeu a focar em termos decisivos como *"voo"*, *"dinheiro"* e *"atendimento"*, ignorando palavras comuns que não ajudavam a definir a intenção.
+* **Regressão Logística (Modelo):** Foi usada porque calcula com precisão a chance matemática de a frase pertencer a cada categoria. Como o vocabulário das três intenções ficou bem separado pelo TF-IDF, o modelo tomou a decisão certa sem "decorar" as frases (evitando o overfitting).
 
 
 
