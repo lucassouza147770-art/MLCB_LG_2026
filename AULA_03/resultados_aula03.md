@@ -73,6 +73,76 @@ horario_atendimento       0.50      1.00      0.67         1
       na predição.
 
 
+#========== PRODUÇÃO DO RELATÓRIO:==============
+# 1 - Cole o código corrigido e a acurácia obtida.
+      
+            dados_rh = {
+          'mensagem': [
+              'Como solicitar minhas ferias?', 'Quero agendar meu periodo de ferias',
+              'Onde baixo meu holerite do mes?', 'Preciso do comprovante de rendimentos',
+              'Como cadastrar meu atestado medico?', 'Onde envio o atestado de consulta?'
+          ],
+          'intencao': [
+              'solicitar_ferias', 'solicitar_ferias',
+              'obter_holerite', 'obter_holerite',
+              'enviar_atestado', 'enviar_atestado'
+          ]
+      }
+      
+      df3 = pd.DataFrame(dados_rh)
+      
+      # TODO 1: Separe o dataset em X ('mensagem') e y ('intencao')
+      X = df3['mensagem']
+      y = df3['intencao']
+      
+      # TODO 2: Realize o train_test_split com test_size=0.33 e random_state=42
+      X_train, X_test, y_train, y_test = train_test_split(df3['mensagem'], df3['intencao'], test_size=0.33, random_state=42)
+      
+      # TODO 3: Monte o Pipeline encapsulando o TfidfVectorizer e a LogisticRegression
+      pipeline = Pipeline([
+           ('vectorizer', TfidfVectorizer(stop_words=['de', 'o', 'meu', 'minhas', 'como', 'onde', 'do', 'quero', 'preciso'], ngram_range=(1,2))),
+           ('classifier', LogisticRegression())
+       ])
+      
+      # TODO 4: Treine o pipeline completo com .fit() usando os dados de treino brutos
+      pipeline.fit(X_train, y_train)
+      
+      # TODO 5: Faca a predicao nos dados de teste brutos e exiba a acuracia
+      predicoes = pipeline.predict(X_test)
+      print(f"Acuracia via Pipeline: {accuracy_score(y_test, predicoes) * 100:.2f}%")
+      
+            [2]
+      0s
+      dados_rh = {
+          'mensagem': [
+              'Como solicitar minhas ferias?', 'Quero agendar meu periodo de ferias',
+              'Onde baixo meu holerite do mes?', 'Preciso do comprovante de rendimentos',
+              'Como cadastrar meu atestado medico?', 'Onde envio o atestado de consulta?'
+          ],
+          'intencao': [
+              'solicitar_ferias', 'solicitar_ferias',
+              'obter_holerite', 'obter_holerite',
+              'enviar_atestado', 'enviar_atestado'
+      …
+      # TODO 5: Faca a predicao nos dados de teste brutos e exiba a acuracia
+      predicoes = pipeline.predict(X_test)
+      print(f"Acuracia via Pipeline: {accuracy_score(y_test, predicoes) * 100:.2f}%")
+      
+
+
+ Acuracia via Pipeline: 0.00%
+
+
+# 2 - Qual é a grande vantagem de utilizar o objeto Pipeline no Scikit-Learn?
+
+      Porque ele centraliza todas as etapas de transformação de texto e o modelo de ML em um único bloco de código estruturado, tirando a necessidade
+      de aplicar processos manuais e repetitivos em dados de treino e teste.
+      
+# 3 - Por que o Pipeline evita que erros de pré-processamento ocorram entre treino e teste?
+      
+      Porque ele garante isolamento entre os conjuntos de dados e impede que informações do conjunto de teste influenciem o ajuste do
+      pré-processamento durante a fase do treino, evitando que o modelo tenha contato prévio com o padrão de dados de validação.
+      
 # Todos os resultados devem ser inseridos no arquivo resultados_aula03.md
 #========== FIM ==============
 
