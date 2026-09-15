@@ -7,7 +7,7 @@ Fiz 4 testes com frases diferentes no google colab notebook.
 ### Teste 1
 
 Frase:
-`quero comprar uma casa`
+`quero comprar um apartamento na zona norte`
 
 Resultado:
 
@@ -83,6 +83,7 @@ Resultado:
 Intenção: comprar_imovel
 Confiança: 100.0%
 ```
+<img width="1206" height="480" alt="image" src="https://github.com/user-attachments/assets/f6952dca-b34f-4c62-a60f-1facf04765b3" />
 
 Outro teste:
 
@@ -120,6 +121,9 @@ Intenção: alugar_imovel
 Confiança: 100.0%
 Status: IDENTIFICADO (alugar_imovel) - Corte de confiança: 65%
 ```
+
+<img width="1210" height="494" alt="image" src="https://github.com/user-attachments/assets/984c7a70-c34b-4d66-b922-4903997e04ff" />
+
 
 Também testei uma frase que não tinha muito a ver com o sistema:
 
@@ -165,6 +169,9 @@ Intenção: cancelar_contrato
 Confiança: 100.0%
 Status: IDENTIFICADO (cancelar_contrato) - Corte de confiança: 65%
 ```
+
+<img width="1223" height="514" alt="image" src="https://github.com/user-attachments/assets/a44d3a10-96c0-43ab-b2b9-533bf3f99e48" />
+
 
 A nova classe foi reconhecida pelo modelo e apareceu normalmente na interface.
 
