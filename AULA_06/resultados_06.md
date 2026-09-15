@@ -17,6 +17,9 @@ Confiança: 100.0%
 Status: IDENTIFICADO (comprar_imovel)
 ```
 
+<img width="1230" height="495" alt="image" src="https://github.com/user-attachments/assets/d5411054-1939-46af-909b-b73691258724" />
+
+
 ### Teste 2
 
 Frase:
